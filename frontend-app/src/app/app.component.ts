@@ -10,8 +10,8 @@ import {API_URL} from "../../config-param";
   selector: 'app-root',
   template: `
     <h1>Welcome to shortener link!</h1>
-    <input type="text" [(ngModel)]="originalLink" />
-    <input type="button" value="Get short link!" (click)="getShortLink()">
+    <input type="text" [(ngModel)]="originalLink" (keydown.enter)="getShortLink()" />
+    <input type="button" #inputField value="Get short link!" (click)="getShortLink()">
     <div *ngIf="shortLink && !errorMessage" style="margin-top: 20px;">Yout short link: {{shortLink}}</div>
     <div *ngIf="errorMessage" style="margin-top: 20px;">Error: {{errorMessage}}</div>
 `,
