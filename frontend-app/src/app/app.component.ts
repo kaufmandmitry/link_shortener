@@ -3,6 +3,8 @@ import {Http} from "@angular/http";
 import {NgModel} from '@angular/forms';
 import 'rxjs/add/operator/toPromise';
 import {Observable} from 'rxjs/Rx';
+import {API_URL} from "../../config-param";
+
 
 @Component({
   selector: 'app-root',
@@ -26,7 +28,7 @@ export class AppComponent
   ) {}
 
   getShortLink() {
-    this.http.post('http://127.0.0.1:8000/links', JSON.stringify({'originalLink': this.originalLink}))
+    this.http.post(API_URL + '/links', JSON.stringify({'originalLink': this.originalLink}))
         .subscribe(
             (data) => {
                 let response = data.json();

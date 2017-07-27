@@ -29,7 +29,7 @@ class DefaultController extends Controller
         /* @var Link $link */
         $link = $this->getDoctrine()->getRepository(Link::class)->findOneBy(['shortLink' => $shortLink]);
         if (!$link) {
-            throw new NotFoundHttpException();
+            throw new NotFoundHttpException('The link not found');
         }
 
         return $this->redirect($link->getOriginalLink());
