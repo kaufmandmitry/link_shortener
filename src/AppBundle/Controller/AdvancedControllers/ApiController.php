@@ -19,7 +19,10 @@ class ApiController extends Controller
      */
     public function renderData($data = [])
     {
-        $headers = ['Content-Type' => 'application/json'];
+        $headers = [
+            'Content-Type' => 'application/json',
+            'Access-Control-Allow-Origin' => '*'
+        ];
         $body = [
             'success' => true,
             'data' => $data
@@ -37,7 +40,10 @@ class ApiController extends Controller
      */
     public function renderError($code, $message)
     {
-        $headers = ['Content-Type' => 'application/json'];
+        $headers = [
+            'Content-Type' => 'application/json',
+            'Access-Control-Allow-Origin' => '*'
+        ];
         $body = [
             'success' => false,
             'error' => [
@@ -60,7 +66,10 @@ class ApiController extends Controller
     public function showExceptionAction($exception, $logger)
     {
 
-        $headers = ['Content-Type' => 'application/json'];
+        $headers = [
+            'Content-Type' => 'application/json',
+            'Access-Control-Allow-Origin' => '*'
+        ];
         $statusCode = $exception->getStatusCode();
         $message = $exception->getMessage();
 
