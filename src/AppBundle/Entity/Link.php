@@ -30,6 +30,7 @@ class Link
      *
      * @ORM\Column(name="originalLink", type="string", length=1024, unique=true)
      * @Assert\Url()
+     * @Assert\NotBlank()
      */
     private $originalLink;
 
@@ -37,6 +38,7 @@ class Link
      * @var string
      *
      * @ORM\Column(name="shortLink", type="string", length=30, unique=true)
+     * @Assert\NotBlank()
      */
     private $shortLink;
     

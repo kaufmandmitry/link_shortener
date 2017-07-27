@@ -38,15 +38,5 @@ export class AppComponent
                 this.errorMessage = response.error.message;
             }
         );
-
-
-
-    // if (response.success) {
-    //   this.shortLink = response.data.shortLink;
-    //   this.errorMessage = '';
-    // } else {
-    //   this.errorMessage = response.error.message;
-    // }
-
   }
 }

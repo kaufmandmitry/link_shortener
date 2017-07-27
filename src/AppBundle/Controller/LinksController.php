@@ -43,7 +43,7 @@ class LinksController extends ApiController
         $errors = $validator->validate($link);
 
         if (count($errors) > 0) {
-            throw new BadRequestHttpException('Incorrect format of the link or this url already exists in the system.');
+            throw new BadRequestHttpException($errors[0]->getMessage());
         }
 
         $entityManager = $this->getDoctrine()->getManager();
